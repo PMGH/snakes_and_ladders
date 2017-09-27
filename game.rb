@@ -35,7 +35,7 @@ class Game
   end
 
   def check_win(player)
-    return true if player.position() > 30
+    return true if player.position() >= 30
   end
 
   # run game
@@ -52,16 +52,22 @@ class Game
     reply = gets.chomp().downcase()
     if (reply == "y") || (reply == "yes")
       player.roll(@dice) # also moves player
+
       @board.evaluate_position(player)
-      if check_win(player) == true
-        end_game()
-      else
-        puts "#{player.name()}, you are on square #{player.position()}."
-        next_turn()
-        play_game()
-      end
+
+      evaluate_win()
     else
       end_game()
+    end
+  end
+
+  def evaluate_win()
+    if check_win(player) == true
+      end_game()
+    else
+      puts "#{player.name()}, you are on square #{player.position()}."
+      next_turn()
+      play_game()
     end
   end
 
