@@ -17,4 +17,5 @@ class Dice
     return @showing_side = rand(1..6)
   end
 
+
 end

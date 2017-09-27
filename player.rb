@@ -24,8 +24,7 @@ class Player
   def set_position(new_position)
     @position = new_position
   end
-
-
+  
 
   # behaviour
   def roll(dice)
@@ -33,11 +32,6 @@ class Player
     @position += dice_roll
     return dice_roll
   end
-
-  # placeholding for evaluating if landed on snake/ladder/finish
-  # def move_position/evaluate_position()
-  #
-  # end
 
 
 end

@@ -13,4 +13,13 @@ class Board
     return @board.length()
   end
 
+  # placeholding for evaluating if landed on snake/ladder/finish
+  def evaluate_position(player)
+    if @board[player.position()] != nil  # nil go to end
+      snake_or_ladder = @board[player.position()] # snake or ladder
+      snake_or_ladder.move_player(player)
+    end
+  end
+
+
 end

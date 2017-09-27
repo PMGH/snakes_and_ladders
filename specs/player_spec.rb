@@ -4,6 +4,7 @@ require('minitest/rg')
 require_relative('../player')
 require_relative('../dice')
 
+
 class TestPlayer < MiniTest::Test
 
   def setup
@@ -44,7 +45,6 @@ class TestPlayer < MiniTest::Test
     roll = @player1.roll(@dice)
     expected = 1 + roll
 
-
     actual = @player1.position()
 
     assert_equal(expected, actual)
@@ -62,5 +62,6 @@ class TestPlayer < MiniTest::Test
     @player1.set_position(15)
     assert_equal(15, @player1.position)
   end
+
 
 end

@@ -7,8 +7,7 @@ require_relative('../board')
 require_relative('../dice')
 
 
-
-class TestBoard < MiniTest::Test
+class TestLadder < MiniTest::Test
 
   def setup()
     @snake1 = Snake.new(17, 4)
@@ -59,6 +58,7 @@ class TestBoard < MiniTest::Test
 
   end
 
+
   def test_get_start_position()
     assert_equal(17, @snake1.start_position)
   end
@@ -68,10 +68,7 @@ class TestBoard < MiniTest::Test
   end
 
 
-
-
   def test_move_player()
-
     @player1.set_position(@snake1.start_position)
 
     @snake1.move_player(@player1)
@@ -82,7 +79,6 @@ class TestBoard < MiniTest::Test
     assert_equal(expected, actual)
 
   end
-
 
 
 end

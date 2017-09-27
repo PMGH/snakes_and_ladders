@@ -3,6 +3,7 @@ require('minitest/rg')
 
 require_relative('../dice')
 
+
 class TestDice < MiniTest::Test
 
   def setup
@@ -21,5 +22,6 @@ class TestDice < MiniTest::Test
 
     assert_equal(expected, actual)
   end
+
 
 end

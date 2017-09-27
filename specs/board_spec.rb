@@ -4,11 +4,28 @@ require('minitest/rg')
 require_relative('../board')
 require_relative('../player')
 require_relative('../dice')
+require_relative('../snake')
+require_relative('../ladder')
 
 
 class TestBoard < MiniTest::Test
 
   def setup
+
+    @ladder1 = Ladder.new(3, 22)
+    @ladder2 = Ladder.new(5, 8)
+    @ladder3 = Ladder.new(11, 26)
+    @ladder4 = Ladder.new(20, 29)
+
+    @ladders = [@ladder1, @ladder2, @ladder3, @ladder4]
+
+    @snake1 = Snake.new(17, 4)
+    @snake2 = Snake.new(19, 7)
+    @snake3 = Snake.new(21, 9)
+    @snake4 = Snake.new(27, 1)
+
+    @snakes = [@snake1, @snake2, @snake3, @snake4]
+
     @new_board = [
       nil,
       nil,
@@ -40,7 +57,7 @@ class TestBoard < MiniTest::Test
       @snake4,
       nil,
       nil,
-      nil
+      "win"
     ]
 
     @board = Board.new(@new_board)
@@ -61,7 +78,25 @@ class TestBoard < MiniTest::Test
     assert_equal(31, @board.size())
   end
 
+  def test_board_can_move_player__ladder1()
+    expected = @ladder1.end_position()
+    @player1.set_position(@ladder1.start_position)
 
+    @board.evaluate_position(@player1)
+    actual = @player1.position()
+
+    assert_equal(expected, actual)
+  end
+
+  def test_board_can_move_player__snake1()
+    expected = @snake1.end_position()
+    @player1.set_position(@snake1.start_position)
+
+    @board.evaluate_position(@player1)
+    actual = @player1.position()
+
+    assert_equal(expected, actual)
+  end
 
 
 end

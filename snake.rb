@@ -17,4 +17,5 @@ class Snake
     player.set_position(self.end_position)
   end
 
+
 end
