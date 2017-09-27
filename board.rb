@@ -19,7 +19,7 @@ class Board
       snake_or_ladder = @board[player.position()] # snake or ladder
       snake_or_ladder.move_player(player)
     end
-  end
+  end 
 
 
 end
