@@ -24,7 +24,7 @@ class TestGame < MiniTest::Test
     @snake4 = Snake.new(27, 1)
 
     @new_board = [
-      nil,
+      nil,  # nil for zeroth position
       nil,
       nil,
       @ladder1,
@@ -107,7 +107,7 @@ class TestGame < MiniTest::Test
   end
 
   def test_start_game()
-    assert_equal()
+    assert_nil(@game.start_game())
   end
 
 
