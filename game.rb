@@ -46,17 +46,28 @@ class Game
   end
 
   def play_game()
+    # set player to the first player in playersturn array
     player = @playersturn[0]
     puts
+    # ** could be held in UI file?
     puts "#{player.name()}, would you like to roll?"
+    # get reply from user
     reply = gets.chomp().downcase()
+    # evaluate reply
     if (reply == "y") || (reply == "yes")
+
+      # roll the dice and move player
+      # ** split roll and move methods?
       player.roll(@dice) # also moves player
 
+      # check the player position, is it on a snake or ladder? Also moves player
+      # ** split evaluate position and move methods?
       @board.evaluate_position(player)
 
+      # check if the player has won
       evaluate_win()
     else
+      # end the game
       end_game()
     end
   end

@@ -23,6 +23,7 @@ class TestGame < MiniTest::Test
     @snake3 = Snake.new(21, 9)
     @snake4 = Snake.new(27, 1)
 
+    # ** D R Y...(Hash with snakes, ladders and their respective positions instead?)
     @new_board = [
       nil,  # nil for zeroth position
       nil,

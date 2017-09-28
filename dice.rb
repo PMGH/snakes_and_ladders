@@ -17,5 +17,8 @@ class Dice
     return @showing_side = rand(1..6)
   end
 
+  # def self.roll()
+  #   rand(1..@sides)
+  # end
 
 end
